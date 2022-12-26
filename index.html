@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>うさぎで一句</title>
+    <style>
+        /* @import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css); */
+        @import url(//fonts.googleapis.com/css?family=Yuji%20Syuku);
+
+        #haiku {
+            -webkit-writing-mode: vertical-rl;
+            -ms-writing-mode: tb-rl;
+            writing-mode: vertical-rl;
+            /* font-family: 'Noto Sans Japanese'; */
+            font-family: 'Yuji Syuku';
+            font-weight: lighter;
+            font-size: xx-large;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="haiku"></p>
+    <script>
+        sourceHaikus = [
+            ["水仙や", "兎の耳も", "旭影", "荘丹"],
+            ["月球の", "兎が育つ", "春の草", "原裕"],
+            ["落栗や", "兎の遊ぶ", "所なし", "成美"],
+            ["初雪に", "兎の皮の", "髭作れ", "芭蕉"],
+            ["松虫や", "兎の道の", "茂りあふ", "野狂"],
+            ["初月や", "兎の臼の", "作りかけ", "支考"],
+            ["短日の", "兎に白き", "山ばかり", "上村占"],
+            ["玉霰", "月の兎が", "仕業かな", "柳原極堂"],
+            ["無月なる", "庭に出てゐし", "家兎", "原裕"],
+            ["涼しさや", "湖を跳ぶ", "兎波", "矢島渚男"],
+        ];
+
+        randomIndex = Math.floor(Math.random() * sourceHaikus.length);
+        randomHaiku = sourceHaikus[randomIndex];
+        first = randomHaiku[0];
+        middle = randomHaiku[1];
+        last = randomHaiku[2];
+
+        haiku = [first, middle, last].join("　")
+
+        document.getElementById("haiku").innerText = haiku
+    </script>
+</body>
+
+</html>
