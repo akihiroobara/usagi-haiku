@@ -17,11 +17,29 @@
             font-weight: lighter;
             font-size: xx-large;
         }
+
+        .flowing {
+            height: 0;
+            margin: 0;
+            white-space: nowrap;
+            overflow: hidden;
+            animation: flowing-anim 5s forwards linear;
+        }
+
+        @keyframes flowing-anim {
+            0% {
+                height: 0%;
+            }
+
+            100% {
+                height: 100%;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <p id="haiku"></p>
+    <p id="haiku" class="flowing"></p>
     <script>
         sourceHaikus = [
             ["水仙や", "兎の耳も", "旭影", "荘丹"],
